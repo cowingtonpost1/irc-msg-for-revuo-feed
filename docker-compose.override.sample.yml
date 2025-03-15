@@ -1,3 +1,4 @@
+services:
   irc-msg-for-revuo:
     environment: 
       TZ: UTC
