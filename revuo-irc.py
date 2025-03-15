@@ -1,15 +1,10 @@
-import random
 import feedparser
-import pprint 
 import os
 import time
 import json
-import pprint
 import pickle
 import tweepy
-import ssl
-import requests 
-import json
+import requests
 
 webhook_endpoint = os.environ['WMB_LIBERACHAT_URL']
 webhook_password = os.environ['WMB_LIBERACHAT_PASSWORD']
@@ -20,8 +15,9 @@ rizon_webhook_password = os.environ['WMB_RIZON_PASSWORD']
 api_key = os.environ['API_KEY']
 api_secret_key = os.environ['API_SECRET_KEY']
 
-loc_long = int(os.environ['LOC_LON'])
-loc_lat = int(os.environ['LOC_LAT'])
+#loc_long = os.environ.get('LOC_LON')
+#loc_lat = os.environ.get('LOC_LAT')
+
 api_bearer = os.environ['API_BEARER']
 
 consumer_key = os.environ['CONSUMER_KEY']
@@ -44,7 +40,7 @@ def send_msg(msg,webhook_password,webhook_endpoint):
 
 def send_tweet(tweet):
 	global consumer_key, consumer_secret, access_token, access_token_secret
-	global loc_long, loc_lat
+	#global loc_long, loc_lat
 
 	client = tweepy.Client(consumer_key=consumer_key,
 	                   consumer_secret=consumer_secret,
