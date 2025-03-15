@@ -29,6 +29,8 @@ consumer_secret = os.environ['CONSUMER_SECRET']
 access_token = os.environ['ACCESS_TOKEN']
 access_token_secret = os.environ['ACCESS_TOKEN_SECRET']
 
+reload_minutes = int(os.environ.get('RELOAD_MINUTES', 0))
+
 url_preview = 1
 
 def send_msg(msg,webhook_password,webhook_endpoint):
@@ -93,5 +95,15 @@ def main():
         send_tweet(tweet)
         send_msg(msg,webhook_password,webhook_endpoint)
         send_msg(msg,rizon_webhook_password,rizon_webhook_endpoint)
+
+def daemonize():
+    '''Makes the script run in a loop, starting every reload_minutes minutes'''
+    while True:
+        main()
+        time.sleep(reload_minutes * 60)
+
 if __name__ == "__main__":
-    main()
+    if reload_minutes > 0:
+        daemonize()
+    else:
+        main()

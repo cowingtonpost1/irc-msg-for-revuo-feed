@@ -11,6 +11,7 @@
       #CONSUMER_SECRET: 
       #ACCESS_TOKEN: 
       #ACCESS_TOKEN_SECRET: 
+      #RELOAD_MINUTES: 60
 
   wmb-rizon:
     environment: 
