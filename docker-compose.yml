@@ -4,8 +4,8 @@ services:
     build: .
     restart: unless-stopped
     environment:
-      WMB_LIBERACHAT_URL: http://wmb-liberachat:8089
-      WMB_RIZON_URL: http://wmb-rizon:8089
+      WMB_LIBERACHAT_URL: http://wmb-liberachat:8080
+      WMB_RIZON_URL: http://wmb-rizon:8080
 
   wmb-rizon:
     image: ghcr.io/cfindlayisme/wmb:latest
