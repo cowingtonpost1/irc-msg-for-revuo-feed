@@ -1,2 +1,6 @@
 readme.md
 .gitignore
+__pycache__
+config.py
+nostr-config
+save.pickle

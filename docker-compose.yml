@@ -1,20 +1,19 @@
 services:
-
   irc-msg-for-revuo:
     build: .
-    restart: unless-stopped
+    restart: no
+    volumes:
+      - ./config.py:/app/config.py
+      - ./save.pickle:/app/save.pickle
     environment:
-      WMB_LIBERACHAT_URL: http://wmb-liberachat:8080
-      WMB_RIZON_URL: http://wmb-rizon:8080
+      - TZ=UTC
+      - PYTHONUNBUFFERED=1
+    extra_hosts:
+      - "www.revuo-xmr.com:host-gateway"
+      - "revuo-xmr.com:host-gateway"
 
-  wmb-rizon:
-    image: ghcr.io/cfindlayisme/wmb:latest
-    restart: unless-stopped
-    environment: 
-      IRC_SERVER: irc.rizon.net:6665
+  go-nostrss:
+    image: ghcr.io/cowingtonpost1/go-nostrss:latest
+    volumes:
+      - ./nostr-config:/config/
 
-  wmb-liberachat:
-    image: ghcr.io/cfindlayisme/wmb:latest
-    restart: unless-stopped
-    environment: 
-      IRC_SERVER: irc.libera.chat:6665
