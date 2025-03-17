@@ -99,6 +99,7 @@ def daemonize():
         time.sleep(reload_minutes * 60)
 
 if __name__ == "__main__":
+	time.sleep(30)
     if reload_minutes > 0:
         daemonize()
     else:
