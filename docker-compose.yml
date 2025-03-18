@@ -6,6 +6,7 @@ services:
     environment:
       WMB_LIBERACHAT_URL: http://wmb-liberachat:8080
       WMB_RIZON_URL: http://wmb-rizon:8080
+      PYTHONUNBUFFERED: 1
 
   wmb-rizon:
     image: ghcr.io/cfindlayisme/wmb:latest
