@@ -17,13 +17,6 @@ sudo cp config.example.py config.py
 sudo vim config.py
 ```
 
-## Running
-
-```sh
-docker compose up -d
-docker compose logs -f # For logging
-```
-
 ## Nostr Configuration
 
 Run the container interactively and answer the prompts to configure it.
@@ -32,3 +25,8 @@ Run the container interactively and answer the prompts to configure it.
 docker run -v ./nostr-config:/config/ -it ghcr.io/cowingtonpost1/go-nostrss:latest
 ```
 
+## Running
+
+```sh
+docker compose up -d
+```
