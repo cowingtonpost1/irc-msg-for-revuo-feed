@@ -1,3 +1,8 @@
 # Environment
 docker-compose.override.yml
+save.pickle
 .env
+__pycache__
+config.py
+nostr-config/config.yml
+nostr-config/posted_articles.json
