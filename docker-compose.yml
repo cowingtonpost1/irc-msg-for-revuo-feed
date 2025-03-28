@@ -16,4 +16,7 @@ services:
     image: ghcr.io/cowingtonpost1/go-nostrss:latest
     volumes:
       - ./nostr-config:/config/
+    extra_hosts:
+      - "www.revuo-xmr.com:host-gateway"
+      - "revuo-xmr.com:host-gateway"
 
