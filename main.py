@@ -38,6 +38,8 @@ def main():
             attempts += 1
 
         time.sleep(15)
+    # wait for IRC to join channels
+    time.sleep(15)
 
     signal.signal(signal.SIGTERM, shutdown)
     signal.signal(signal.SIGINT, shutdown)
