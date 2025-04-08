@@ -23,7 +23,7 @@ class LemmyNotifier(Notifier):
         self.ready = True
 
     def format_message(self, title, link):
-        issue_num = re.match(r"Issue (\d+): ([a-zA-Z]+ \d+ - \d+, \d+)", title).group(1)
+        issue_num = re.match(r"Issue (\d+): .*", title).group(1)
         return {"name":f"Revuo Monero Issue {issue_num} - Weekly newsletter", "url": link, "body": link}
         
 
