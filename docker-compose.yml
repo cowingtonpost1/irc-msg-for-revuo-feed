@@ -13,7 +13,7 @@ services:
       - "revuo-xmr.com:host-gateway"
 
   go-nostrss:
-    image: ghcr.io/cowingtonpost1/go-nostrss:latest
+    image: ghcr.io/0ceanslim/go-nostrss:latest
     volumes:
       - ./nostr-config:/config/
     extra_hosts:
